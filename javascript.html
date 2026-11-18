@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | Alif Utama</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript</h1>
+        <p>The Language of the Web</p>
+    </header>
+
+    <nav>
+        <a href="index.html">← Back to Home</a>
+    </nav>
+
+    <section>
+        <h2>About This Skill</h2>
+        <p>I use JavaScript to bring web pages to life, adding interactivity and dynamic behavior on the front end. I'm comfortable working with the DOM and handling user events to create responsive experiences.</p>
+    </section>
+
+    <section>
+        <h2>What I Can Do</h2>
+        <ul>
+            <li>Manipulate the DOM and handle user events</li>
+            <li>Add interactivity and dynamic content to pages</li>
+            <li>Work with APIs and asynchronous requests</li>
+            <li>Write clean, modern JavaScript (ES6+)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Related Projects</h2>
+        <p>This portfolio uses JavaScript for small dynamic touches, such as the automatic footer year.</p>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Alif Utama Hcr-Tech.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
