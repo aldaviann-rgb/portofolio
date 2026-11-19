@@ -98,22 +98,49 @@ header h1 {
 
 nav {
     background-color: #16162a;
-    text-align: center;
     padding: 15px;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
-nav a {
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
     color: #e0e0e0;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #4cc9f0;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 section {
@@ -354,11 +381,46 @@ footer {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(80px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    section {
+        margin: 30px auto;
+    }
 }
