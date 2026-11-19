@@ -156,6 +156,10 @@ h2 {
     margin-bottom: 15px;
 }
 
+.about-hidden {
+    display: none;
+}
+
 .skill-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -207,6 +211,19 @@ h2 {
 .skill-card p {
     color: #9090a0;
     font-size: 14px;
+}
+
+.learning-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffcf6b;
+    background-color: rgba(255, 207, 107, 0.12);
+    border: 1px solid rgba(255, 207, 107, 0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
 }
 
 .project-grid {

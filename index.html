@@ -13,7 +13,7 @@
 </head>
 
 <body>
-      <header>
+    <header>
         <img src="profile.png" alt="Alif Utama profile photo" class="profile-pic">
         <h1>ALIF UTAMA</h1>
         <p class="subtitle">Web Enthusiast & Web Developer</p>
@@ -26,7 +26,7 @@
         </div>
     </header>
 
-       <nav>
+    <nav>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
             <span></span>
@@ -41,12 +41,14 @@
         </div>
     </nav>
 
-            <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a full-stack developer who has been building for the web since junior high school. I work across the stack with PHP, Laravel, JavaScript, and Node.js, backed by MySQL, and also build backend systems and games with C#. I enjoy creating real-time applications with Socket.io and am comfortable working in Linux through the command line.</p>
+       <section id="about">
+        <div id="aboutContent" class="about-hidden">
+            <h2>About Me</h2>
+            <p>I'm a full-stack developer who has been building for the web since junior high school. I work across the stack with PHP, Laravel, JavaScript, and Node.js, backed by MySQL, and also build backend systems and games with C#. I enjoy creating real-time applications with Socket.io and am comfortable working in Linux through the command line.</p>
+        </div>
     </section>
 
-          <section id="skills">
+    <section id="skills">
         <h2>Skills</h2>
         <div class="skill-grid">
             <a href="html-css.html" class="skill-card">
@@ -98,6 +100,13 @@
                 <h3>C#</h3>
                 <p>Backend systems and game development.</p>
             </a>
+            <a href="kotlin.html" class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin">
+                </div>
+                <h3>Kotlin <span class="learning-tag">Learning</span></h3>
+                <p>Currently learning Kotlin for Android development.</p>
+            </a>
             <a href="linux.html" class="skill-card">
                 <div class="skill-icon">
                     <img src="https://cdn.simpleicons.org/linux" alt="Linux">
@@ -117,14 +126,9 @@
                 <a href="https://repository.hcr-tech.com/project/" target="_blank" class="project-link">View Project</a>
             </div>
             <div class="project-card">
-                <h3>Cybersecurity Learning Notes</h3>
-                <p>A collection of notes and labs documenting my cybersecurity journey.</p>
-                <a href="#" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
                 <h3>Linux Practice Lab</h3>
                 <p>Hands-on exercises exploring Linux commands and system basics.</p>
-                <a href="#" class="project-link">View Project</a>
+                <a href="https://www.kali.org/docs/nethunter-pro/" target="_blank" class="project-link">View Project</a>
             </div>
         </div>
     </section>
@@ -184,22 +188,18 @@
         <h2>Contact</h2>
         <p>Feel free to reach out to me through any of the channels below.</p>
 
-        <div class="contact-info">
-            <p>📧 Email: <a href="mailto:aldaviann@gmail.com">aldaviann@gmail.com</a></p>
-        </div>
-
         <div class="social-links">
+            <a href="mailto:aldaviann@gmail.com">Email</a>
+            <a href="https://github.com/aldaviann-rgb" target="_blank">GitHub</a>
             <a href="https://wa.me/601113302426" target="_blank">WhatsApp</a>
         </div>
-
-        <a href="mailto:aldaviann@gmail.com" class="button">Contact Me</a>
     </section>
 
     <footer>
         <p>&copy; <span id="year"></span> Alif Utama Hcr-Tech. Built with HTML & CSS.</p>
     </footer>
 
-      <script>
+    <script>
         document.getElementById("year").textContent = new Date().getFullYear();
 
         const hamburger = document.getElementById("hamburger");
@@ -213,6 +213,13 @@
             link.addEventListener("click", () => {
                 navLinks.classList.remove("active");
             });
+        });
+
+        // Toggle bagian About saat menu "About" diklik
+        const aboutLink = document.querySelector('.nav-links a[href="#about"]');
+        const aboutContent = document.getElementById("aboutContent");
+        aboutLink.addEventListener("click", () => {
+            aboutContent.classList.toggle("about-hidden");
         });
 
         const revealElements = document.querySelectorAll("section");
