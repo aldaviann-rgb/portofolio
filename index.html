@@ -26,12 +26,19 @@
         </div>
     </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#downloads">Downloads</a>
-        <a href="#contact">Contact</a>
+       <nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#downloads">Downloads</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
             <section id="about">
@@ -192,8 +199,21 @@
         <p>&copy; <span id="year"></span> Alif Utama Hcr-Tech. Built with HTML & CSS.</p>
     </footer>
 
-        <script>
+      <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
 
         const revealElements = document.querySelectorAll("section");
         revealElements.forEach(el => el.classList.add("reveal"));
